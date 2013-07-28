@@ -8,14 +8,14 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
 
-@end
 
 @implementation ViewController
+@synthesize myTextField;
+@synthesize myLabel;
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -26,4 +26,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)changeLabel:(id)sender {
+    NSString *message = [[NSString alloc] initWithFormat:@"hello %@", [myTextField text]];
+    
+    [myLabel setText:message];
+    
+
+}
 @end
